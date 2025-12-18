@@ -1,1 +1,2 @@
-/* add global styles that can be loaded post LCP here */
+/* add lazy-loaded styles here */
+/* These styles are loaded after the LCP event */

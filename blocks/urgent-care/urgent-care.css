@@ -1,0 +1,96 @@
+/* Urgent Care block styles */
+.urgent-care {
+  background-color: var(--background-color);
+}
+
+.urgent-care-wrapper {
+  background-color: rgba(229, 34, 7, 0.05);
+  border: 2px solid rgba(229, 34, 7, 0.2);
+  border-radius: var(--border-radius);
+  padding: 32px;
+}
+
+.urgent-care-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.urgent-care-icon {
+  width: 48px;
+  height: 48px;
+  background-color: rgba(229, 34, 7, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.urgent-care-icon .icon {
+  width: 28px;
+  height: 28px;
+  color: var(--error-color);
+}
+
+.urgent-care-header h2 {
+  font-size: var(--heading-font-size-l);
+  margin: 0;
+  color: var(--text-color);
+}
+
+.urgent-care-info {
+  max-width: 700px;
+}
+
+.urgent-care-info h3 {
+  font-size: var(--heading-font-size-m);
+  margin: 0 0 12px;
+  color: var(--text-color);
+}
+
+.urgent-care-info p {
+  font-size: var(--body-font-size-m);
+  color: var(--text-light);
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+
+.urgent-care-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.urgent-care-actions .button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.urgent-care-actions .button.primary {
+  background-color: var(--error-color);
+  border-color: var(--error-color);
+}
+
+.urgent-care-actions .button.primary:hover {
+  background-color: #b91c06;
+  border-color: #b91c06;
+}
+
+.urgent-care-actions .button .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.urgent-care-emergency {
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+  font-size: var(--body-font-size-s);
+  color: var(--text-light);
+}
+
+.urgent-care-emergency strong {
+  color: var(--text-color);
+}

@@ -1,0 +1,14 @@
+{
+  "project": "USWDS Healthcare",
+  "plugins": [
+    {
+      "id": "blocks",
+      "title": "Blocks Library"
+    }
+  ],
+  "libraries": [
+    {
+      "code": "https://cdn.jsdelivr.net/npm/aem-sidekick@latest/dist/library/index.js"
+    }
+  ]
+}

@@ -1,20 +1,116 @@
+/* Footer styles */
 footer {
-  background-color: var(--light-color);
+  background-color: #162e51;
+  color: #fff;
+  padding: 48px 0 24px;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.footer-column h3 {
+  font-size: var(--body-font-size-l);
+  margin: 0 0 16px;
+  color: #fff;
+}
+
+.footer-column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin: 8px 0;
+}
+
+.footer-column a {
+  color: #c9c9c9;
+  text-decoration: none;
+  font-size: var(--body-font-size-s);
+  transition: color 0.2s;
+}
+
+.footer-column a:hover {
+  color: var(--primary-light);
+  text-decoration: underline;
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s;
+}
+
+.social-links a:hover {
+  background-color: var(--primary-color);
+}
+
+.footer-description {
+  font-size: var(--body-font-size-s);
+  color: #c9c9c9;
+  line-height: 1.5;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 24px;
+}
+
+.footer-legal {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-legal p {
+  margin: 0;
+  font-size: var(--body-font-size-xs);
+  color: #c9c9c9;
+}
+
+.legal-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.legal-links a {
   font-size: var(--body-font-size-xs);
 }
 
-footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
-}
-
-footer .footer p {
-  margin: 0;
+@media (width >= 600px) {
+  .footer-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+  .footer-columns {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .footer-legal {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 }

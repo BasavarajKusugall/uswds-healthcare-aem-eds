@@ -1,37 +1,147 @@
-.hero-container .hero-wrapper {
-  max-width: unset;
-  padding: 0;
-}
-
+/* Hero block styles */
 .hero {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
 }
 
-.hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
-}
-
-.hero picture {
+.hero-background {
   position: absolute;
-  z-index: -1;
   inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+  z-index: 0;
 }
 
-.hero img {
-  object-fit: cover;
+.hero-background picture {
   width: 100%;
   height: 100%;
 }
 
+.hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 94, 162, 0.85);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 64px 0;
+  width: 100%;
+}
+
+.hero-text {
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: var(--heading-font-size-xxl);
+  margin: 0 0 24px;
+  color: white;
+}
+
+.hero-description {
+  font-size: var(--body-font-size-l);
+  line-height: 1.6;
+  margin-bottom: 32px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.hero-actions .button {
+  padding: 14px 32px;
+  font-size: var(--body-font-size-m);
+}
+
+.hero-actions .button.primary {
+  background-color: white;
+  color: var(--primary-color);
+  border-color: white;
+}
+
+.hero-actions .button.primary:hover {
+  background-color: var(--light-color);
+  border-color: var(--light-color);
+}
+
+.hero-actions .button.secondary {
+  background-color: transparent;
+  color: white;
+  border-color: white;
+}
+
+.hero-actions .button.secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.quick-action-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.quick-action-card:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.quick-action-card .icon {
+  width: 32px;
+  height: 32px;
+}
+
+.quick-action-title {
+  font-weight: 600;
+  font-size: var(--body-font-size-s);
+  text-align: center;
+}
+
+@media (width >= 600px) {
+  .quick-actions {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 @media (width >= 900px) {
   .hero {
-    padding: 40px 32px;
+    min-height: 600px;
+  }
+  
+  .hero h1 {
+    font-size: 56px;
+  }
+  
+  .hero-description {
+    font-size: var(--body-font-size-xl);
   }
 }

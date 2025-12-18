@@ -1,0 +1,510 @@
+/**
+ * UI Components Utilities - buttons, badges, spinners, etc.
+ */
+
+/* ===== BUTTONS ===== */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border: 2px solid transparent;
+  border-radius: var(--border-radius);
+  font-size: var(--body-font-size-m);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  gap: 8px;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+/* Primary button */
+.button.primary {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.button.primary:hover {
+  background-color: #004080;
+  border-color: #004080;
+}
+
+.button.primary:active {
+  background-color: #003d7a;
+}
+
+.button.primary:disabled {
+  background-color: var(--text-light);
+  border-color: var(--text-light);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Secondary button */
+.button.secondary {
+  background-color: var(--secondary-color);
+  color: white;
+  border-color: var(--secondary-color);
+}
+
+.button.secondary:hover {
+  background-color: #d97d1f;
+  border-color: #d97d1f;
+}
+
+/* Outline button */
+.button.outline {
+  background-color: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.button.outline:hover {
+  background-color: rgba(0, 94, 162, 0.1);
+}
+
+/* Ghost button */
+.button.ghost {
+  background-color: transparent;
+  color: var(--text-color);
+  border-color: transparent;
+}
+
+.button.ghost:hover {
+  background-color: var(--light-color);
+}
+
+/* Destructive button */
+.button.destructive {
+  background-color: #e52207;
+  color: white;
+  border-color: #e52207;
+}
+
+.button.destructive:hover {
+  background-color: #c41802;
+  border-color: #c41802;
+}
+
+/* Link button */
+.button.link {
+  background-color: transparent;
+  color: var(--primary-color);
+  text-decoration: underline;
+  border: none;
+  padding: 0;
+}
+
+.button.link:hover {
+  opacity: 0.8;
+}
+
+/* Button sizes */
+.button.sm {
+  padding: 8px 16px;
+  font-size: var(--body-font-size-s);
+}
+
+.button.lg {
+  padding: 16px 32px;
+  font-size: var(--body-font-size-l);
+}
+
+.button.icon {
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Button group */
+.button-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* ===== BADGES ===== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: var(--body-font-size-xs);
+  font-weight: 700;
+  white-space: nowrap;
+  gap: 4px;
+}
+
+.badge.primary {
+  background-color: rgba(0, 94, 162, 0.2);
+  color: var(--primary-color);
+}
+
+.badge.secondary {
+  background-color: rgba(250, 148, 65, 0.2);
+  color: var(--secondary-color);
+}
+
+.badge.success {
+  background-color: rgba(76, 175, 80, 0.2);
+  color: #4caf50;
+}
+
+.badge.warning {
+  background-color: rgba(255, 152, 0, 0.2);
+  color: #ff9800;
+}
+
+.badge.error {
+  background-color: rgba(229, 34, 7, 0.2);
+  color: #e52207;
+}
+
+.badge.outline {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+/* ===== SPINNER ===== */
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 3px solid rgba(0, 94, 162, 0.2);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.spinner.sm {
+  width: 12px;
+  height: 12px;
+  border-width: 2px;
+}
+
+.spinner.lg {
+  width: 24px;
+  height: 24px;
+  border-width: 3px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== SKELETON ===== */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--light-color) 25%,
+    rgba(0, 0, 0, 0.05) 50%,
+    var(--light-color) 75%
+  );
+  background-size: 200% 100%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton.text {
+  height: 1em;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.skeleton.text.lg {
+  height: 1.5em;
+  margin-bottom: 12px;
+}
+
+.skeleton.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.skeleton.card {
+  height: 200px;
+  border-radius: var(--border-radius);
+}
+
+/* ===== AVATAR ===== */
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 700;
+  font-size: var(--body-font-size-m);
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar.sm {
+  width: 32px;
+  height: 32px;
+  font-size: var(--body-font-size-s);
+}
+
+.avatar.lg {
+  width: 56px;
+  height: 56px;
+  font-size: var(--body-font-size-l);
+}
+
+.avatar.secondary {
+  background-color: var(--secondary-color);
+}
+
+/* ===== PROGRESS BAR ===== */
+.progress {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--light-color);
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+  border-radius: 4px;
+}
+
+.progress.animated .progress-bar {
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    #007ab3,
+    var(--primary-color)
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ===== KBD (Keyboard) ===== */
+.kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 6px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--light-color);
+  font-family: monospace;
+  font-size: var(--body-font-size-xs);
+  font-weight: 600;
+  color: var(--text-color);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* ===== SEPARATOR ===== */
+.separator {
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 16px 0;
+}
+
+.separator.vertical {
+  width: 1px;
+  height: auto;
+  display: inline-block;
+  margin: 0 16px;
+}
+
+/* ===== TOGGLE ===== */
+.toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 50px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.toggle input {
+  display: none;
+}
+
+.toggle-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--text-light);
+  border-radius: 28px;
+  transition: all 0.3s;
+}
+
+.toggle-slider::before {
+  content: '';
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.toggle input:checked + .toggle-slider {
+  background-color: var(--primary-color);
+}
+
+.toggle input:checked + .toggle-slider::before {
+  transform: translateX(22px);
+}
+
+/* ===== SWITCH ===== */
+.switch {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.switch input {
+  margin: 0;
+}
+
+/* ===== HOVER CARD ===== */
+.hover-card-trigger {
+  cursor: pointer;
+  text-decoration: underline dotted;
+  text-underline-offset: 4px;
+}
+
+.hover-card-content {
+  position: absolute;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 12px;
+  max-width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+/* ===== POPOVER ===== */
+.popover {
+  position: absolute;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+}
+
+/* ===== TOOLTIP ===== */
+.tooltip {
+  position: absolute;
+  background-color: var(--text-color);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: var(--body-font-size-xs);
+  white-space: nowrap;
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.tooltip.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ===== EMPTY STATE ===== */
+.empty {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.empty-title {
+  font-size: var(--heading-font-size-md);
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+
+.empty-description {
+  font-size: var(--body-font-size-m);
+  color: var(--text-light);
+  margin-bottom: 24px;
+}
+
+.empty .button {
+  margin-top: 12px;
+}
+
+@media (max-width: 600px) {
+  .button {
+    padding: 10px 16px;
+    font-size: var(--body-font-size-s);
+  }
+
+  .button.lg {
+    padding: 12px 20px;
+  }
+
+  .badge {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+  }
+}
