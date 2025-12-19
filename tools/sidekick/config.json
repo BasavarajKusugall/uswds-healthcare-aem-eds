@@ -4,6 +4,40 @@
     {
       "id": "blocks",
       "title": "Blocks Library"
+    },
+    {
+        "id": "asset-library",
+        "title": "My Assets",
+        "environments": [
+            "edit"
+        ],
+        "url": "https://experience.adobe.com/solutions/CQ-helix-assets-addon/static-assets/resources/asset-selector.html",
+        "isPalette": true,
+        "includePaths": [
+            "**.docx**"
+        ],
+        "passConfig": true,
+        "paletteRect": "top: 50px; bottom: 10px; right: 10px; left: auto; width:400px; height: calc(100vh - 60px)"
+    },
+    {
+        "id": "dvids-library",
+        "title": "DVIDS",
+        "environments": [
+            "edit"
+        ],
+        "url": "https://typesense.dvidshub.net",
+        "isPalette": true,
+        "includePaths": [
+            "**.docx**"
+        ],
+        "passConfig": true,
+        "copyMode": [
+          {
+            "mimeType": "image/*",
+            "value": "reference"
+          }
+        ],
+        "paletteRect": "top: 50px; bottom: 10px; right: 10px; left: auto; width:600px; height: calc(100vh - 60px)"
     }
   ],
   "libraries": [
