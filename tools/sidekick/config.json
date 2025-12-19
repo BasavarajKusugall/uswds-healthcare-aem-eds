@@ -8,7 +8,7 @@
   ],
   "libraries": [
     {
-      "code": "https://cdn.jsdelivr.net/npm/aem-sidekick/dist/library/index.js"
+      "code": "https://cdn.jsdelivr.net/npm/@ez-aem/sidekick-library@1.8.3/dist/index.min.js"
     }
   ]
 }
