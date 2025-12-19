@@ -6,14 +6,14 @@ export default async function decorate(block) {
   const nav = document.createElement('nav');
   nav.className = 'pagination-nav';
   nav.setAttribute('aria-label', 'Pagination');
-  
+
   const ul = document.createElement('ul');
   ul.className = 'pagination-list';
-  
+
   // Create pagination items
   const currentPage = 1;
   const totalPages = 5;
-  
+
   // Previous button
   const prevLi = document.createElement('li');
   const prevBtn = document.createElement('button');
@@ -22,9 +22,9 @@ export default async function decorate(block) {
   prevBtn.disabled = currentPage === 1;
   prevLi.appendChild(prevBtn);
   ul.appendChild(prevLi);
-  
+
   // Page numbers
-  for (let i = 1; i <= totalPages; i++) {
+  for (let i = 1; i <= totalPages; i += 1) {
     const li = document.createElement('li');
     const link = document.createElement('button');
     link.className = 'pagination-link';
@@ -36,7 +36,7 @@ export default async function decorate(block) {
     li.appendChild(link);
     ul.appendChild(li);
   }
-  
+
   // Next button
   const nextLi = document.createElement('li');
   const nextBtn = document.createElement('button');
@@ -45,7 +45,7 @@ export default async function decorate(block) {
   nextBtn.disabled = currentPage === totalPages;
   nextLi.appendChild(nextBtn);
   ul.appendChild(nextLi);
-  
+
   nav.appendChild(ul);
   block.textContent = '';
   block.appendChild(nav);

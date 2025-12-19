@@ -5,7 +5,7 @@
 export default async function decorate(block) {
   const wrapper = document.createElement('div');
   wrapper.className = 'alert-banner-wrapper';
-  
+
   wrapper.innerHTML = `
     <div class="alert-banner-content">
       <div class="container">
@@ -23,10 +23,10 @@ export default async function decorate(block) {
       </div>
     </div>
   `;
-  
+
   block.textContent = '';
   block.appendChild(wrapper);
-  
+
   // Close functionality
   const closeBtn = block.querySelector('.alert-banner-close');
   closeBtn.addEventListener('click', () => {

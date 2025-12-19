@@ -5,10 +5,10 @@
 export default async function decorate(block) {
   const cardWrapper = document.createElement('div');
   cardWrapper.className = 'card';
-  
+
   // Convert block content to card structure
   const rows = block.querySelectorAll(':scope > div');
-  
+
   // First row: image
   let imageDiv = null;
   if (rows[0]?.querySelector('img')) {
@@ -20,21 +20,21 @@ export default async function decorate(block) {
     }
     cardWrapper.appendChild(imageDiv);
   }
-  
+
   // Content section
   const contentDiv = document.createElement('div');
   contentDiv.className = 'card-content';
-  
+
   // Extract title, description, etc.
   const startIdx = imageDiv ? 1 : 0;
-  for (let i = startIdx; i < rows.length; i++) {
+  for (let i = startIdx; i < rows.length; i += 1) {
     const row = rows[i];
     const content = row.cloneNode(true);
     contentDiv.appendChild(content);
   }
-  
+
   cardWrapper.appendChild(contentDiv);
-  
+
   block.textContent = '';
   block.appendChild(cardWrapper);
 }

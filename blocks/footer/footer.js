@@ -5,7 +5,7 @@
 export default async function decorate(block) {
   const footer = document.createElement('div');
   footer.className = 'footer-wrapper';
-  
+
   footer.innerHTML = `
     <div class="footer-content">
       <div class="container">
@@ -66,6 +66,6 @@ export default async function decorate(block) {
       </div>
     </div>
   `;
-  
+
   block.appendChild(footer);
 }

@@ -31,14 +31,19 @@
   justify-content: center;
 }
 
-.pagination-link:hover:not(:disabled) {
-  border-color: var(--primary-color);
-  color: var(--primary-color);
-}
-
 .pagination-link:focus-visible {
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;
+}
+
+.pagination-link:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-link:hover:not(:disabled) {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .pagination-link.current {
@@ -47,18 +52,13 @@
   border-color: var(--primary-color);
 }
 
-.pagination-link:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
 .pagination-prev,
 .pagination-next {
   min-width: auto;
   padding: 0 16px;
 }
 
-@media (max-width: 600px) {
+@media (width <= 600px) {
   .pagination-list {
     gap: 4px;
   }

@@ -62,7 +62,7 @@
 }
 
 /* Responsive table for mobile */
-@media (max-width: 600px) {
+@media (width <= 600px) {
   .table-wrapper {
     overflow-x: auto;
   }

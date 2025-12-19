@@ -5,7 +5,7 @@
 export default async function decorate(block) {
   const wrapper = document.createElement('div');
   wrapper.className = 'gov-banner-wrapper';
-  
+
   wrapper.innerHTML = `
     <div class="gov-banner-content">
       <div class="container">
@@ -45,14 +45,14 @@ export default async function decorate(block) {
       </div>
     </div>
   `;
-  
+
   block.textContent = '';
   block.appendChild(wrapper);
-  
+
   // Toggle functionality
   const toggle = block.querySelector('.gov-banner-toggle');
   const info = block.querySelector('.gov-banner-info');
-  
+
   toggle.addEventListener('click', () => {
     const expanded = toggle.getAttribute('aria-expanded') === 'true';
     toggle.setAttribute('aria-expanded', !expanded);

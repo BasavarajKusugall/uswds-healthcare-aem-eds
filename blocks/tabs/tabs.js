@@ -5,26 +5,44 @@
 export default async function decorate(block) {
   const tabsContainer = document.createElement('div');
   tabsContainer.className = 'tabs';
-  
+
   // Extract tab triggers and content from table format
   const rows = block.querySelectorAll(':scope > div');
   const tabs = [];
-  
+
   rows.forEach((row) => {
     const cells = row.querySelectorAll(':scope > div');
     if (cells.length >= 2) {
       tabs.push({
         label: cells[0].textContent.trim(),
-        content: cells[1].innerHTML
+        content: cells[1].innerHTML,
       });
     }
   });
-  
+
   // Create tab list
   const tabList = document.createElement('div');
   tabList.className = 'tabs-list';
   tabList.setAttribute('role', 'tablist');
-  
+
+  // Create tab content areas
+  const contentContainer = document.createElement('div');
+  contentContainer.className = 'tabs-content';
+
+  // Tab selection function
+  function selectTab(index) {
+    const triggers = tabList.querySelectorAll('.tabs-trigger');
+    const panels = contentContainer.querySelectorAll('.tabs-panel');
+
+    triggers.forEach((t, i) => {
+      t.setAttribute('aria-selected', i === index);
+    });
+
+    panels.forEach((p, i) => {
+      p.hidden = i !== index;
+    });
+  }
+
   tabs.forEach((tab, index) => {
     const tabButton = document.createElement('button');
     tabButton.className = 'tabs-trigger';
@@ -36,11 +54,7 @@ export default async function decorate(block) {
     tabButton.addEventListener('click', () => selectTab(index));
     tabList.appendChild(tabButton);
   });
-  
-  // Create tab content areas
-  const contentContainer = document.createElement('div');
-  contentContainer.className = 'tabs-content';
-  
+
   tabs.forEach((tab, index) => {
     const content = document.createElement('div');
     content.className = 'tabs-panel';
@@ -51,26 +65,12 @@ export default async function decorate(block) {
     content.innerHTML = tab.content;
     contentContainer.appendChild(content);
   });
-  
-  // Tab selection function
-  function selectTab(index) {
-    const triggers = tabList.querySelectorAll('.tabs-trigger');
-    const panels = contentContainer.querySelectorAll('.tabs-panel');
-    
-    triggers.forEach((t, i) => {
-      t.setAttribute('aria-selected', i === index);
-    });
-    
-    panels.forEach((p, i) => {
-      p.hidden = i !== index;
-    });
-  }
-  
+
   // Keyboard navigation
   tabList.addEventListener('keydown', (e) => {
     const triggers = Array.from(tabList.querySelectorAll('.tabs-trigger'));
     const current = triggers.indexOf(document.activeElement);
-    
+
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
       e.preventDefault();
       selectTab((current + 1) % triggers.length);
@@ -89,10 +89,10 @@ export default async function decorate(block) {
       triggers[triggers.length - 1].focus();
     }
   });
-  
+
   tabsContainer.appendChild(tabList);
   tabsContainer.appendChild(contentContainer);
-  
+
   block.textContent = '';
   block.appendChild(tabsContainer);
 }

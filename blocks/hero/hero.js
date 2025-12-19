@@ -1,5 +1,3 @@
-import { createOptimizedPicture } from '../../scripts/aem.js';
-
 /**
  * loads and decorates the hero block
  * @param {Element} block The hero block element
@@ -7,12 +5,11 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 export default async function decorate(block) {
   const heroWrapper = document.createElement('div');
   heroWrapper.className = 'hero-wrapper';
-  
+
   // Extract content from block
   const picture = block.querySelector('picture');
   const h1 = block.querySelector('h1');
-  const content = block.querySelector('p');
-  
+
   // Create hero structure
   heroWrapper.innerHTML = `
     <div class="hero-background">
@@ -52,7 +49,7 @@ export default async function decorate(block) {
       </div>
     </div>
   `;
-  
+
   block.textContent = '';
   block.appendChild(heroWrapper);
 }

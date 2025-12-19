@@ -5,25 +5,25 @@
 export default async function decorate(block) {
   const form = document.createElement('form');
   form.className = 'form-wrapper';
-  
+
   // Convert table rows to form fields
   const rows = block.querySelectorAll(':scope > div');
-  
+
   rows.forEach((row) => {
     const cells = row.querySelectorAll(':scope > div');
     if (cells.length >= 2) {
       const label = cells[0].textContent.trim();
       const fieldType = cells[1].textContent.toLowerCase();
-      
+
       const formGroup = document.createElement('div');
       formGroup.className = 'form-group';
-      
+
       const labelEl = document.createElement('label');
       labelEl.textContent = label;
       labelEl.className = 'form-label';
-      
+
       let field;
-      
+
       if (fieldType.includes('text')) {
         field = document.createElement('input');
         field.type = 'text';
@@ -54,16 +54,16 @@ export default async function decorate(block) {
         field.type = 'text';
         field.className = 'form-input';
       }
-      
+
       field.id = label.toLowerCase().replace(/\s+/g, '-');
       labelEl.htmlFor = field.id;
-      
+
       formGroup.appendChild(labelEl);
       formGroup.appendChild(field);
       form.appendChild(formGroup);
     }
   });
-  
+
   // Add submit button
   const buttonGroup = document.createElement('div');
   buttonGroup.className = 'form-actions';
@@ -73,7 +73,7 @@ export default async function decorate(block) {
   submitBtn.textContent = 'Submit';
   buttonGroup.appendChild(submitBtn);
   form.appendChild(buttonGroup);
-  
+
   block.textContent = '';
   block.appendChild(form);
 }

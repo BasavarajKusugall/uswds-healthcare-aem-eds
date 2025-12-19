@@ -4,8 +4,8 @@
 }
 
 .urgent-care-wrapper {
-  background-color: rgba(229, 34, 7, 0.05);
-  border: 2px solid rgba(229, 34, 7, 0.2);
+  background-color: rgb(229 34 7 / 5%);
+  border: 2px solid rgb(229 34 7 / 20%);
   border-radius: var(--border-radius);
   padding: 32px;
 }
@@ -20,7 +20,7 @@
 .urgent-care-icon {
   width: 48px;
   height: 48px;
-  background-color: rgba(229, 34, 7, 0.1);
+  background-color: rgb(229 34 7 / 10%);
   border-radius: 8px;
   display: flex;
   align-items: center;

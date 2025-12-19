@@ -7,35 +7,35 @@ export default async function decorate(block) {
     {
       icon: 'calendar',
       title: 'Schedule Appointment',
-      description: 'Book or manage upcoming appointments'
+      description: 'Book or manage upcoming appointments',
     },
     {
       icon: 'file-text',
       title: 'Medical Records',
-      description: 'View and download your health records'
+      description: 'View and download your health records',
     },
     {
       icon: 'message-square',
       title: 'Secure Messaging',
-      description: 'Contact your healthcare provider'
+      description: 'Contact your healthcare provider',
     },
     {
       icon: 'pill',
       title: 'Prescriptions',
-      description: 'Refill and track medications'
-    }
+      description: 'Refill and track medications',
+    },
   ];
-  
+
   const wrapper = document.createElement('div');
   wrapper.className = 'patient-portal-wrapper';
-  
+
   wrapper.innerHTML = `
     <div class="patient-portal-header">
       <h2>Access Your Patient Portal</h2>
       <p>Manage your healthcare online with 24/7 access to your medical records, appointments, and secure messaging.</p>
     </div>
     <div class="patient-portal-features">
-      ${features.map(feature => `
+      ${features.map((feature) => `
         <div class="portal-feature">
           <div class="feature-icon">
             <span class="icon icon-${feature.icon}"></span>
@@ -49,7 +49,7 @@ export default async function decorate(block) {
       <a href="/patient-portal" class="button primary">Access Patient Portal</a>
     </div>
   `;
-  
+
   block.textContent = '';
   block.appendChild(wrapper);
 }

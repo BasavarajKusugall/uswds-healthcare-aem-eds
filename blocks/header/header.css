@@ -167,15 +167,21 @@ header .header {
   transition: background-color 0.2s;
 }
 
-.nav-list > li > a:hover,
-.nav-dropdown-toggle:hover {
-  background-color: var(--light-color);
-}
-
 .nav-dropdown-toggle {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.mega-menu-section ul a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-size: var(--body-font-size-s);
+}
+
+.nav-list > li > a:hover,
+.nav-dropdown-toggle:hover {
+  background-color: var(--light-color);
 }
 
 .mega-menu {
@@ -208,12 +214,6 @@ header .header {
 
 .mega-menu-section ul li {
   margin: 8px 0;
-}
-
-.mega-menu-section ul a {
-  color: var(--link-color);
-  text-decoration: none;
-  font-size: var(--body-font-size-s);
 }
 
 .mega-menu-section ul a:hover {

@@ -28,7 +28,7 @@
 }
 
 .collapsible-trigger:hover {
-  background-color: rgba(0, 94, 162, 0.05);
+  background-color: rgb(0 94 162 / 5%);
 }
 
 .collapsible-trigger:focus-visible {

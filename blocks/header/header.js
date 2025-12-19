@@ -1,5 +1,3 @@
-import { getMetadata } from '../../scripts/aem.js';
-
 /**
  * loads and decorates the header
  * @param {Element} block The header block element
@@ -8,7 +6,7 @@ export default async function decorate(block) {
   // Create the header structure
   const header = document.createElement('div');
   header.className = 'header-wrapper';
-  
+
   // Top branding section
   const brandSection = document.createElement('div');
   brandSection.className = 'header-brand';
@@ -38,7 +36,7 @@ export default async function decorate(block) {
       </div>
     </div>
   `;
-  
+
   // Navigation section
   const navSection = document.createElement('nav');
   navSection.className = 'header-nav';
@@ -83,21 +81,20 @@ export default async function decorate(block) {
       </ul>
     </div>
   `;
-  
+
   header.appendChild(brandSection);
   header.appendChild(navSection);
   block.appendChild(header);
-  
+
   // Mobile menu functionality
   const mobileMenuBtn = block.querySelector('.mobile-menu-btn');
-  const navList = block.querySelector('.nav-list');
-  
+
   mobileMenuBtn.addEventListener('click', () => {
     const expanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
     mobileMenuBtn.setAttribute('aria-expanded', !expanded);
     navSection.classList.toggle('open');
   });
-  
+
   // Dropdown functionality
   const dropdownToggles = block.querySelectorAll('.nav-dropdown-toggle');
   dropdownToggles.forEach((toggle) => {
@@ -113,7 +110,7 @@ export default async function decorate(block) {
       toggle.parentElement.classList.toggle('active');
     });
   });
-  
+
   // Close dropdowns when clicking outside
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.has-dropdown')) {

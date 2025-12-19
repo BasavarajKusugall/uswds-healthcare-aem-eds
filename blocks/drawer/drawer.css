@@ -1,10 +1,7 @@
 /* Drawer block styles */
 .drawer-container {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   z-index: 999;
   pointer-events: none;
 }
@@ -15,17 +12,14 @@
 
 .drawer-backdrop {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background-color: transparent;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .drawer-container.open .drawer-backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(0 0 0 / 50%);
 }
 
 .drawer {
@@ -35,7 +29,7 @@
   width: 280px;
   height: 100vh;
   background-color: var(--background-color);
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 2px 0 8px rgb(0 0 0 / 15%);
   overflow-y: auto;
   transition: left 0.3s ease;
   display: flex;
@@ -88,13 +82,13 @@
   border-bottom: none;
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .drawer {
     width: 250px;
   }
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .drawer {
     display: none;
   }

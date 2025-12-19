@@ -29,7 +29,7 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 94, 162, 0.85);
+  background-color: rgb(0 94 162 / 85%);
 }
 
 .hero-content {
@@ -53,7 +53,7 @@
   font-size: var(--body-font-size-l);
   line-height: 1.6;
   margin-bottom: 32px;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgb(255 255 255 / 90%);
 }
 
 .hero-actions {
@@ -86,7 +86,7 @@
 }
 
 .hero-actions .button.secondary:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgb(255 255 255 / 10%);
 }
 
 .quick-actions {
@@ -96,8 +96,8 @@
 }
 
 .quick-action-card {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgb(255 255 255 / 10%);
+  border: 1px solid rgb(255 255 255 / 20%);
   border-radius: var(--border-radius);
   padding: 20px;
   display: flex;
@@ -110,7 +110,7 @@
 }
 
 .quick-action-card:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgb(255 255 255 / 20%);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }

@@ -5,7 +5,7 @@
 export default async function decorate(block) {
   const wrapper = document.createElement('div');
   wrapper.className = 'urgent-care-wrapper';
-  
+
   wrapper.innerHTML = `
     <div class="urgent-care-header">
       <div class="urgent-care-icon">
@@ -33,7 +33,7 @@ export default async function decorate(block) {
       </div>
     </div>
   `;
-  
+
   block.textContent = '';
   block.appendChild(wrapper);
 }

@@ -49,7 +49,7 @@
   margin: 0;
 }
 
-@media (max-width: 600px) {
+@media (width <= 600px) {
   .breadcrumb-list {
     gap: 2px;
   }

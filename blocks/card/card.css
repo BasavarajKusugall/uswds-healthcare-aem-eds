@@ -71,7 +71,7 @@
   border-left: 4px solid var(--success-color);
 }
 
-@media (max-width: 600px) {
+@media (width <= 600px) {
   .card {
     border-radius: 8px;
   }
