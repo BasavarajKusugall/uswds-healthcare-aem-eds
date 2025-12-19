@@ -26,7 +26,7 @@ export default async function decorate(block) {
 
   // Add content from remaining cells
   rows.forEach((row, idx) => {
-    if (idx === 0) return;
+    //if (idx === 0) return;
     const content = row.cloneNode(true);
     contentDiv.appendChild(content);
   });

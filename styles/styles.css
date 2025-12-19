@@ -261,7 +261,7 @@ main .section {
 
 @media (width >= 900px) {
   .section > div {
-    max-width: 1200px;
+    max-width: 100%;
     margin: auto;
   }
 }
@@ -303,11 +303,11 @@ main .section[data-section-status='initialized'] {
 }
 
 /* Utility classes */
-.container {
+/* .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
-}
+} */
 
 @media (width >= 600px) {
   .container {
